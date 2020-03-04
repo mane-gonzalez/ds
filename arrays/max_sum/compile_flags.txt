@@ -1,0 +1,7 @@
+-I/Library/Developer/CommandLineTools/usr/include/c++/v1
+-I/Library/Developer/CommandLineTools/usr/lib/clang/8.0.0/include
+-I/Library/Developer/CommandLineTools/usr/include
+-I/usr/include
+-I/System/Library/Frameworks
+-I/Library/Frameworks
+-I/Users/mac/Documents/ds/arrays/max_sum
