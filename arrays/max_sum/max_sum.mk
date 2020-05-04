@@ -5,21 +5,21 @@
 ## Debug
 ProjectName            :=max_sum
 ConfigurationName      :=Debug
-WorkspacePath          :=/Users/mac/Documents/ds/arrays
-ProjectPath            :=/Users/mac/Documents/ds/arrays/max_sum
-IntermediateDirectory  :=./Debug
+WorkspacePath          :=D:/GeeksforGeeks/ds/arrays
+ProjectPath            :=D:/GeeksforGeeks/ds/arrays/max_sum
+IntermediateDirectory  :=$(ConfigurationName)
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=mac
-Date                   :=03/03/2020
-CodeLitePath           :="/Users/mac/Library/Application Support/CodeLite"
-LinkerName             :=/usr/bin/g++
-SharedObjectLinkerName :=/usr/bin/g++ -dynamiclib -fPIC
+User                   :=MGONZA36
+Date                   :=03/05/2020
+CodeLitePath           :="C:/Program Files/CodeLite"
+LinkerName             :=C:/cygwin64/bin/gcc.exe
+SharedObjectLinkerName :=gcc -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
-PreprocessSuffix       :=.i
+PreprocessSuffix       :=.o.i
 DebugSwitch            :=-g 
 IncludeSwitch          :=-I
 LibrarySwitch          :=-l
@@ -31,11 +31,13 @@ OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
 Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
-PreprocessOnlySwitch   :=-E
+PreprocessOnlySwitch   :=-E 
 ObjectsFileList        :="max_sum.txt"
 PCHCompileFlags        :=
-MakeDirCommand         :=mkdir -p
-LinkOptions            :=  
+MakeDirCommand         :=makedir
+RcCmpOptions           := 
+RcCompilerName         :=windres
+LinkOptions            :=  -static-libgcc -static-libstdc++
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
 RcIncludePath          := 
@@ -47,19 +49,19 @@ LibPath                := $(LibraryPathSwitch).
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := /usr/bin/ar rcu
-CXX      := /usr/bin/g++
-CC       := /usr/bin/gcc
-CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
-CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
+AR       := ar rcus
+CXX      := C:/cygwin64/bin/gcc.exe
+CC       := C:/cygwin64/bin/gcc.exe
+CXXFLAGS :=  -g -O0 -std=c99 -Wall $(Preprocessors)
+CFLAGS   :=  -g -O0 -std=c99 -Wall $(Preprocessors)
 ASFLAGS  := 
-AS       := /usr/bin/as
+AS       := C:/cygwin64/bin/as.exe
 
 
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=/Users/mac/Downloads/codelite 2.app/Contents/SharedSupport/
+CodeLiteDir:=C:\Program Files\CodeLite
 Objects0=$(IntermediateDirectory)/main.c$(ObjectSuffix) 
 
 
@@ -79,11 +81,11 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
 MakeIntermediateDirs:
-	@test -d ./Debug || $(MakeDirCommand) ./Debug
+	@$(MakeDirCommand) "$(ConfigurationName)"
 
 
 $(IntermediateDirectory)/.d:
-	@test -d ./Debug || $(MakeDirCommand) ./Debug
+	@$(MakeDirCommand) "$(ConfigurationName)"
 
 PreBuild:
 
@@ -91,11 +93,9 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/main.c$(ObjectSuffix): main.c $(IntermediateDirectory)/main.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/Users/mac/Documents/ds/arrays/max_sum/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main.c$(DependSuffix): main.c
+$(IntermediateDirectory)/main.c$(ObjectSuffix): main.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/main.c$(DependSuffix) -MM main.c
-
+	$(CC) $(SourceSwitch) "D:/GeeksforGeeks/ds/arrays/max_sum/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
 
@@ -105,6 +105,6 @@ $(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
 ## Clean
 ##
 clean:
-	$(RM) -r ./Debug/
+	$(RM) -r $(ConfigurationName)/
 
 

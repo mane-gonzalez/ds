@@ -1,4 +1,6 @@
 // C++ program to find max value of i*arr[i] 
+//https://www.geeksforgeeks.org/find-maximum-value-of-sum-iarri-with-only-rotations-on-given-array-allowed/
+
 #include <stdio.h> 
 
 
@@ -34,7 +36,7 @@ int maxSum(int arr[], int n)
 // Driver program 
 int main(void) 
 { 
-	int arr[] = {10, 1, 2, 3, 4, 5, 6, 7, 8, 9}; 
+	int arr[] = {8, 3, 1, 2}; 
 	int n = sizeof(arr)/sizeof(arr[0]); 
 	printf( "\nMax sum is %d", maxSum(arr, n)); 
 	return 0; 
