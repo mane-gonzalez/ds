@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="arrays" Database="" Version="10.0.0">
-  <Project Name="max_sum" Path="max_sum/max_sum.project" Active="Yes"/>
+  <Project Name="max_sum" Path="max_sum/max_sum.project" Active="No"/>
+  <Project Name="array[i]=i" Path="array[i]=i/array[i]=i.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
       <Project Name="max_sum" ConfigName="Debug"/>
+      <Project Name="array[i]=i" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
       <Project Name="max_sum" ConfigName="Release"/>
+      <Project Name="array[i]=i" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

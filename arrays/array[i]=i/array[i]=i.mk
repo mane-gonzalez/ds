@@ -3,17 +3,17 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=max_sum
+ProjectName            :=array[i]=i
 ConfigurationName      :=Debug
 WorkspacePath          :=/home/m/geekforgeeks/ds/arrays
-ProjectPath            :=/home/m/geekforgeeks/ds/arrays/max_sum
+ProjectPath            :=/home/m/geekforgeeks/ds/arrays/array[i]=i
 IntermediateDirectory  :=$(ConfigurationName)
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=m
-Date                   :=03/02/21
+Date                   :=05/02/21
 CodeLitePath           :=/home/m/.codelite
 LinkerName             :=/bin/clang++-10
 SharedObjectLinkerName :=/bin/clang++-10 -shared -fPIC
@@ -32,10 +32,10 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="max_sum.txt"
+ObjectsFileList        :="array[i]=i.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
-LinkOptions            :=  -static-libgcc -static-libstdc++
+LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
 RcIncludePath          := 
@@ -50,8 +50,8 @@ LibPath                := $(LibraryPathSwitch).
 AR       := /bin/llvm-ar-10 rcu
 CXX      := /bin/clang++-10
 CC       := /bin/clang-10
-CXXFLAGS :=  -g -O0 -std=c99 -Wall $(Preprocessors)
-CFLAGS   :=  -g -O0 -std=c99 -Wall $(Preprocessors)
+CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
+CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 ASFLAGS  := 
 AS       := /bin/llvm-as-10
 
@@ -93,7 +93,7 @@ PreBuild:
 ##
 $(IntermediateDirectory)/main.c$(ObjectSuffix): main.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/main.c$(DependSuffix) -MM main.c
-	$(CC) $(SourceSwitch) "/home/m/geekforgeeks/ds/arrays/max_sum/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/m/geekforgeeks/ds/arrays/array[i]=i/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
 

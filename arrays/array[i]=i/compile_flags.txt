@@ -5,4 +5,4 @@
 -I/usr/lib/llvm-10/lib/clang/10.0.0/include
 -I/usr/include/x86_64-linux-gnu
 -I/usr/include
--I/home/m/geekforgeeks/ds/arrays/max_sum
+-I/home/m/geekforgeeks/ds/arrays/array[i]=i

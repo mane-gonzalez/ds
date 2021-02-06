@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ max_sum - Debug ]----------"
-	@cd "max_sum" && "$(MAKE)" -f  "max_sum.mk"
+	@echo "----------Building project:[ array[i]=i - Debug ]----------"
+	@cd "array[i]=i" && "$(MAKE)" -f  "array[i]=i.mk"
 clean:
-	@echo "----------Cleaning project:[ max_sum - Debug ]----------"
-	@cd "max_sum" && "$(MAKE)" -f  "max_sum.mk" clean
+	@echo "----------Cleaning project:[ array[i]=i - Debug ]----------"
+	@cd "array[i]=i" && "$(MAKE)" -f  "array[i]=i.mk" clean
