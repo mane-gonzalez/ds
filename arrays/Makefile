@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ move_zeroes_end - Debug ]----------"
-	@cd "move_zeroes_end" && "$(MAKE)" -f  "move_zeroes_end.mk"
+	@echo "----------Building project:[ rearrange_positive_negative - Debug ]----------"
+	@cd "rearrange_positive_negative" && "$(MAKE)" -f  "rearrange_positive_negative.mk"
 clean:
-	@echo "----------Cleaning project:[ move_zeroes_end - Debug ]----------"
-	@cd "move_zeroes_end" && "$(MAKE)" -f  "move_zeroes_end.mk" clean
+	@echo "----------Cleaning project:[ rearrange_positive_negative - Debug ]----------"
+	@cd "rearrange_positive_negative" && "$(MAKE)" -f  "rearrange_positive_negative.mk" clean

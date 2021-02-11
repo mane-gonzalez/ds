@@ -1,47 +1,90 @@
-// C++ program to find max value of i*arr[i] 
-//https://www.geeksforgeeks.org/find-maximum-value-of-sum-iarri-with-only-rotations-on-given-array-allowed/
+/* C++ program to rearrange 
+positive and negative integers 
+in alternate fashion while keeping 
+the order of positive and negative numbers. */
+#include <stdio.h>
 
-#include <stdio.h> 
-#define NUM_OF_CHAN 1
-
-// Returns max possible value of i*arr[i]
-int maxSum(int arr[], int n)
+// Utility function to right rotate all elements between
+// [outofplace, cur]
+void rightrotate(int arr[], int n, int outofplace, int cur)
 {
-    // Find array sum and i*arr[i] with no rotation
-    int arrSum = 0;  // Stores sum of arr[i]
-    int currVal = 0;  // Stores sum of i*arr[i]
-    for (int i=0; i<n; i++)
-    {
-        arrSum = arrSum + arr[i];
-        currVal = currVal+(i*arr[i]);
-    }
- 
-    // Initialize result as 0 rotation sum
-    int maxVal = currVal;
- 
-    // Try all rotations one by one and find
-    // the maximum rotation sum.
-    for (int j=1; j<n; j++)
-    {
-        currVal = currVal + arrSum-n*arr[n-j];
-        if (currVal > maxVal)
-            maxVal = currVal;
-    }
- 
-    // Return result
-    return maxVal;
+	char tmp = arr[cur];
+	for (int i = cur; i > outofplace; i--)
+		arr[i] = arr[i - 1];
+	arr[outofplace] = tmp;
 }
 
-// Driver program 
-int main(void) 
-{ 
-	int arr[] = {10, 1, 2, 3, 4, 5, 6, 7, 8, 9}; 
-	int n = sizeof(arr)/sizeof(arr[0]); 
-    
-    for (int fl_ch_no_U8=0;fl_ch_no_U8<NUM_OF_CHAN;fl_ch_no_U8++)
+void rearrange(int arr[], int n)
+{
+	int outofplace = -1;
+
+	for (int index = 0; index < n; index++)
+	{
+		if (outofplace >= 0)
+		{
+			// find the item which must be moved into the
+			// out-of-place entry if out-of-place entry is
+			// positive and current entry is negative OR if
+			// out-of-place entry is negative and current
+			// entry is negative then right rotate
+			//
+			// [...-3, -4, -5, 6...] --> [...6, -3, -4,
+			// -5...]
+			//	 ^						 ^
+			//	 |						 |
+			//	 outofplace	 -->	 outofplace
+			//
+			if (((arr[index] >= 0) && (arr[outofplace] < 0))
+				|| ((arr[index] < 0)
+					&& (arr[outofplace] >= 0)))
+			{
+				rightrotate(arr, n, outofplace, index);
+
+				// the new out-of-place entry is now 2 steps
+				// ahead
+				if (index - outofplace >= 2)
+					outofplace = outofplace + 2;
+				else
+					outofplace = -1;
+			}
+		}
+
+		// if no entry has been flagged out-of-place
+		if (outofplace == -1) {
+			// check if current entry is out-of-place
+			if (((arr[index] >= 0) && (!(index & 0x01)))
+				|| ((arr[index] < 0) && (index & 0x01))) {
+				outofplace = index;
+			}
+		}
+	}
+}
+
+// A utility function to print an array 'arr[]' of size 'n'
+void printArray(int arr[], int n)
+{
+    for(int i=0;i<n;i++)
     {
-        printf( "\nMax sum is %d\n ", maxSum(arr, n)); 
+        printf(" %d ", arr[i]);
     }
+
+}
+
+// Driver code
+int main()
+{
 	
-	return 0; 
-} 
+	int arr[] = { -5, -2, 5, 2, 
+				4, 7, 1, 8, 0, -8 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+
+	printf("before\n");
+	printArray(arr, n);
+
+	rearrange(arr, n);
+
+	printf("after\n");
+	printArray(arr, n);
+
+	return 0;
+}

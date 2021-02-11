@@ -5,21 +5,21 @@
 ## Debug
 ProjectName            :=move_zeroes_end
 ConfigurationName      :=Debug
-WorkspacePath          :=D:/GeeksforGeeks/ds/arrays
-ProjectPath            :=D:/GeeksforGeeks/ds/arrays/move_zeroes_end
+WorkspacePath          :=/home/m/geekforgeeks/ds/arrays
+ProjectPath            :=/home/m/geekforgeeks/ds/arrays/move_zeroes_end
 IntermediateDirectory  :=$(ConfigurationName)
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=MGONZA36
-Date                   :=10/02/2021
-CodeLitePath           :="C:/Program Files/CodeLite"
-LinkerName             :=C:/cygwin64/bin/gcc.exe
-SharedObjectLinkerName :=gcc -shared -fPIC
+User                   :=m
+Date                   :=11/02/21
+CodeLitePath           :=/home/m/.codelite
+LinkerName             :=/bin/clang++-10
+SharedObjectLinkerName :=/bin/clang++-10 -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
-PreprocessSuffix       :=.o.i
+PreprocessSuffix       :=.i
 DebugSwitch            :=-g 
 IncludeSwitch          :=-I
 LibrarySwitch          :=-l
@@ -31,12 +31,10 @@ OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
 Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
-PreprocessOnlySwitch   :=-E 
+PreprocessOnlySwitch   :=-E
 ObjectsFileList        :="move_zeroes_end.txt"
 PCHCompileFlags        :=
-MakeDirCommand         :=makedir
-RcCmpOptions           := 
-RcCompilerName         :=windres
+MakeDirCommand         :=mkdir -p
 LinkOptions            :=  -static-libgcc -static-libstdc++
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
@@ -49,19 +47,19 @@ LibPath                := $(LibraryPathSwitch).
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := ar rcus
-CXX      := C:/cygwin64/bin/gcc.exe
-CC       := C:/cygwin64/bin/gcc.exe
+AR       := /bin/llvm-ar-10 rcu
+CXX      := /bin/clang++-10
+CC       := /bin/clang-10
 CXXFLAGS :=  -g -O0 -std=c99 -Wall $(Preprocessors)
 CFLAGS   :=  -g -O0 -std=c99 -Wall $(Preprocessors)
 ASFLAGS  := 
-AS       := C:/cygwin64/bin/as.exe
+AS       := /bin/llvm-as-10
 
 
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=C:\Program Files\CodeLite
+CodeLiteDir:=/usr/share/codelite
 Objects0=$(IntermediateDirectory)/main.c$(ObjectSuffix) 
 
 
@@ -81,11 +79,11 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
 MakeIntermediateDirs:
-	@$(MakeDirCommand) "$(ConfigurationName)"
+	@test -d $(ConfigurationName) || $(MakeDirCommand) $(ConfigurationName)
 
 
 $(IntermediateDirectory)/.d:
-	@$(MakeDirCommand) "$(ConfigurationName)"
+	@test -d $(ConfigurationName) || $(MakeDirCommand) $(ConfigurationName)
 
 PreBuild:
 
@@ -95,7 +93,7 @@ PreBuild:
 ##
 $(IntermediateDirectory)/main.c$(ObjectSuffix): main.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/main.c$(DependSuffix) -MM main.c
-	$(CC) $(SourceSwitch) "D:/GeeksforGeeks/ds/arrays/move_zeroes_end/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/m/geekforgeeks/ds/arrays/move_zeroes_end/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
 

@@ -5,21 +5,22 @@
 ## Debug
 ProjectName            :=rearrange_positive_negative
 ConfigurationName      :=Debug
-WorkspacePath          :=D:/GeeksforGeeks/ds/arrays
-ProjectPath            :=D:/GeeksforGeeks/ds/arrays/rearrange_positive_negative
-IntermediateDirectory  :=$(ConfigurationName)
-OutDir                 := $(IntermediateDirectory)
+WorkspaceConfiguration := $(ConfigurationName)
+WorkspacePath          :=/home/m/geekforgeeks/ds/arrays
+ProjectPath            :=/home/m/geekforgeeks/ds/arrays/rearrange_positive_negative
+IntermediateDirectory  :=../build-$(ConfigurationName)/rearrange_positive_negative
+OutDir                 :=../build-$(ConfigurationName)/rearrange_positive_negative
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=MGONZA36
-Date                   :=08/02/2021
-CodeLitePath           :="C:/Program Files/CodeLite"
-LinkerName             :=C:/cygwin64/bin/gcc.exe
-SharedObjectLinkerName :=gcc -shared -fPIC
+User                   :=m
+Date                   :=11/02/21
+CodeLitePath           :=/home/m/.codelite
+LinkerName             :=/bin/clang++-10
+SharedObjectLinkerName :=/bin/clang++-10 -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
-PreprocessSuffix       :=.o.i
+PreprocessSuffix       :=.i
 DebugSwitch            :=-g 
 IncludeSwitch          :=-I
 LibrarySwitch          :=-l
@@ -27,16 +28,13 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
+OutputFile             :=../build-$(ConfigurationName)/bin/$(ProjectName)
 Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
-PreprocessOnlySwitch   :=-E 
-ObjectsFileList        :="rearrange_positive_negative.txt"
+PreprocessOnlySwitch   :=-E
+ObjectsFileList        :=$(IntermediateDirectory)/ObjectsList.txt
 PCHCompileFlags        :=
-MakeDirCommand         :=makedir
-RcCmpOptions           := 
-RcCompilerName         :=windres
 LinkOptions            :=  -static-libgcc -static-libstdc++
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
@@ -49,20 +47,20 @@ LibPath                := $(LibraryPathSwitch).
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := ar rcus
-CXX      := C:/cygwin64/bin/gcc.exe
-CC       := C:/cygwin64/bin/gcc.exe
+AR       := /bin/llvm-ar-10 rcu
+CXX      := /bin/clang++-10
+CC       := /bin/clang-10
 CXXFLAGS :=  -g -O0 -std=c99 -Wall $(Preprocessors)
 CFLAGS   :=  -g -O0 -std=c99 -Wall $(Preprocessors)
 ASFLAGS  := 
-AS       := C:/cygwin64/bin/as.exe
+AS       := /bin/llvm-as-10
 
 
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.c$(ObjectSuffix) 
+CodeLiteDir:=/usr/share/codelite
+Objects0=../build-$(ConfigurationName)/rearrange_positive_negative/main.c$(ObjectSuffix) 
 
 
 
@@ -72,20 +70,20 @@ Objects=$(Objects0)
 ## Main Build Targets 
 ##
 .PHONY: all clean PreBuild PrePreBuild PostBuild MakeIntermediateDirs
-all: $(OutputFile)
+all: MakeIntermediateDirs $(OutputFile)
 
-$(OutputFile): $(IntermediateDirectory)/.d $(Objects) 
-	@$(MakeDirCommand) $(@D)
+$(OutputFile): ../build-$(ConfigurationName)/rearrange_positive_negative/.d $(Objects) 
+	@mkdir -p "../build-$(ConfigurationName)/rearrange_positive_negative"
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
 MakeIntermediateDirs:
-	@$(MakeDirCommand) "$(ConfigurationName)"
+	@mkdir -p "../build-$(ConfigurationName)/rearrange_positive_negative"
+	@mkdir -p ""../build-$(ConfigurationName)/bin""
 
-
-$(IntermediateDirectory)/.d:
-	@$(MakeDirCommand) "$(ConfigurationName)"
+../build-$(ConfigurationName)/rearrange_positive_negative/.d:
+	@mkdir -p "../build-$(ConfigurationName)/rearrange_positive_negative"
 
 PreBuild:
 
@@ -93,18 +91,20 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/main.c$(ObjectSuffix): main.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/main.c$(DependSuffix) -MM main.c
-	$(CC) $(SourceSwitch) "D:/GeeksforGeeks/ds/arrays/rearrange_positive_negative/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
+../build-$(ConfigurationName)/rearrange_positive_negative/main.c$(ObjectSuffix): main.c ../build-$(ConfigurationName)/rearrange_positive_negative/main.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/m/geekforgeeks/ds/arrays/rearrange_positive_negative/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/rearrange_positive_negative/main.c$(DependSuffix): main.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/rearrange_positive_negative/main.c$(ObjectSuffix) -MF../build-$(ConfigurationName)/rearrange_positive_negative/main.c$(DependSuffix) -MM main.c
+
+../build-$(ConfigurationName)/rearrange_positive_negative/main.c$(PreprocessSuffix): main.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/rearrange_positive_negative/main.c$(PreprocessSuffix) main.c
 
 
--include $(IntermediateDirectory)/*$(DependSuffix)
+-include ../build-$(ConfigurationName)/rearrange_positive_negative//*$(DependSuffix)
 ##
 ## Clean
 ##
 clean:
-	$(RM) -r $(ConfigurationName)/
+	$(RM) -r $(IntermediateDirectory)
 
 
