@@ -3,10 +3,10 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=reverse_array
+ProjectName            :=move_zeroes_end
 ConfigurationName      :=Debug
 WorkspacePath          :=D:/GeeksforGeeks/ds/arrays
-ProjectPath            :=D:/GeeksforGeeks/ds/arrays/reverse_array
+ProjectPath            :=D:/GeeksforGeeks/ds/arrays/move_zeroes_end
 IntermediateDirectory  :=$(ConfigurationName)
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -32,12 +32,12 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E 
-ObjectsFileList        :="reverse_array.txt"
+ObjectsFileList        :="move_zeroes_end.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
 RcCompilerName         :=windres
-LinkOptions            :=  
+LinkOptions            :=  -static-libgcc -static-libstdc++
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
 RcIncludePath          := 
@@ -52,8 +52,8 @@ LibPath                := $(LibraryPathSwitch).
 AR       := ar rcus
 CXX      := C:/cygwin64/bin/gcc.exe
 CC       := C:/cygwin64/bin/gcc.exe
-CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
-CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
+CXXFLAGS :=  -g -O0 -std=c99 -Wall $(Preprocessors)
+CFLAGS   :=  -g -O0 -std=c99 -Wall $(Preprocessors)
 ASFLAGS  := 
 AS       := C:/cygwin64/bin/as.exe
 
@@ -95,7 +95,7 @@ PreBuild:
 ##
 $(IntermediateDirectory)/main.c$(ObjectSuffix): main.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/main.c$(DependSuffix) -MM main.c
-	$(CC) $(SourceSwitch) "D:/GeeksforGeeks/ds/arrays/reverse_array/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "D:/GeeksforGeeks/ds/arrays/move_zeroes_end/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
 

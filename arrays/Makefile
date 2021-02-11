@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ reverse_array - Debug ]----------"
-	@cd "reverse_array" && "$(MAKE)" -f  "reverse_array.mk"
+	@echo "----------Building project:[ move_zeroes_end - Debug ]----------"
+	@cd "move_zeroes_end" && "$(MAKE)" -f  "move_zeroes_end.mk"
 clean:
-	@echo "----------Cleaning project:[ reverse_array - Debug ]----------"
-	@cd "reverse_array" && "$(MAKE)" -f  "reverse_array.mk" clean
+	@echo "----------Cleaning project:[ move_zeroes_end - Debug ]----------"
+	@cd "move_zeroes_end" && "$(MAKE)" -f  "move_zeroes_end.mk" clean

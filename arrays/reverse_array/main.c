@@ -1,3 +1,5 @@
+/* https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/*/
+
 #include <stdio.h>
 
 void reverse_array(int arr[], int size);
