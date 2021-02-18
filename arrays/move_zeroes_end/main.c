@@ -37,7 +37,10 @@ void moveZerosToEnd(int arr[], int n)
     // element at index 'i' 
     for (int i = 0; i < n; i++) 
         if (arr[i] != 0) 
-            swap(&arr[count++], &arr[i]); 
+        {
+            swap(&arr[count], &arr[i]);
+            count++;
+        }
 } 
 
 void swap(int *src, int *dst)

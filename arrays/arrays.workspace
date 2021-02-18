@@ -4,7 +4,9 @@
   <Project Name="array[i]=i" Path="array[i]=i/array[i]=i.project" Active="No"/>
   <Project Name="reverse_array" Path="reverse_array/reverse_array.project" Active="No"/>
   <Project Name="move_zeroes_end" Path="move_zeroes_end/move_zeroes_end.project" Active="No"/>
-  <Project Name="rearrange_positive_negative" Path="rearrange_positive_negative/rearrange_positive_negative.project" Active="Yes"/>
+  <Project Name="rearrange_positive_negative" Path="rearrange_positive_negative/rearrange_positive_negative.project" Active="No"/>
+  <Project Name="max_element" Path="max_element/max_element.project" Active="No"/>
+  <Project Name="pos_even_neg_odd" Path="pos_even_neg_odd/pos_even_neg_odd.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -13,6 +15,8 @@
       <Project Name="reverse_array" ConfigName="Debug"/>
       <Project Name="move_zeroes_end" ConfigName="Debug"/>
       <Project Name="rearrange_positive_negative" ConfigName="Debug"/>
+      <Project Name="max_element" ConfigName="Debug"/>
+      <Project Name="pos_even_neg_odd" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -21,6 +25,8 @@
       <Project Name="reverse_array" ConfigName="Release"/>
       <Project Name="move_zeroes_end" ConfigName="Release"/>
       <Project Name="rearrange_positive_negative" ConfigName="Release"/>
+      <Project Name="max_element" ConfigName="Release"/>
+      <Project Name="pos_even_neg_odd" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
