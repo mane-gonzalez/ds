@@ -5,5 +5,4 @@
 -I/usr/lib/llvm-10/lib/clang/10.0.0/include
 -I/usr/include/x86_64-linux-gnu
 -I/usr/include
--I/home/m/geekforgeeks/ds/arrays/rearrange_positive_negative
--std=c99
+-I/home/m/geekforgeeks/ds/arrays/min_missing_from_array

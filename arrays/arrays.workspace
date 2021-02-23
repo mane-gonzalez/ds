@@ -6,7 +6,9 @@
   <Project Name="move_zeroes_end" Path="move_zeroes_end/move_zeroes_end.project" Active="No"/>
   <Project Name="rearrange_positive_negative" Path="rearrange_positive_negative/rearrange_positive_negative.project" Active="No"/>
   <Project Name="max_element" Path="max_element/max_element.project" Active="No"/>
-  <Project Name="pos_even_neg_odd" Path="pos_even_neg_odd/pos_even_neg_odd.project" Active="Yes"/>
+  <Project Name="pos_even_neg_odd" Path="pos_even_neg_odd/pos_even_neg_odd.project" Active="No"/>
+  <Project Name="min_missing_from_array" Path="min_missing_from_array/min_missing_from_array.project" Active="No"/>
+  <Project Name="reorder_from_index" Path="reorder_from_index/reorder_from_index.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -17,6 +19,8 @@
       <Project Name="rearrange_positive_negative" ConfigName="Debug"/>
       <Project Name="max_element" ConfigName="Debug"/>
       <Project Name="pos_even_neg_odd" ConfigName="Debug"/>
+      <Project Name="min_missing_from_array" ConfigName="Debug"/>
+      <Project Name="reorder_from_index" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -27,6 +31,8 @@
       <Project Name="rearrange_positive_negative" ConfigName="Release"/>
       <Project Name="max_element" ConfigName="Release"/>
       <Project Name="pos_even_neg_odd" ConfigName="Release"/>
+      <Project Name="min_missing_from_array" ConfigName="Release"/>
+      <Project Name="reorder_from_index" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
