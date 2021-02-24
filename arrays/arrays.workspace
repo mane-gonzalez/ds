@@ -8,7 +8,9 @@
   <Project Name="max_element" Path="max_element/max_element.project" Active="No"/>
   <Project Name="pos_even_neg_odd" Path="pos_even_neg_odd/pos_even_neg_odd.project" Active="No"/>
   <Project Name="min_missing_from_array" Path="min_missing_from_array/min_missing_from_array.project" Active="No"/>
-  <Project Name="reorder_from_index" Path="reorder_from_index/reorder_from_index.project" Active="Yes"/>
+  <Project Name="reorder_from_index" Path="reorder_from_index/reorder_from_index.project" Active="No"/>
+  <Project Name="minimum_distance" Path="minimum_distance/minimum_distance.project" Active="No"/>
+  <Project Name="max_sum_increasing_subsequence" Path="max_sum_increasing_subsequence/max_sum_increasing_subsequence.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -21,6 +23,8 @@
       <Project Name="pos_even_neg_odd" ConfigName="Debug"/>
       <Project Name="min_missing_from_array" ConfigName="Debug"/>
       <Project Name="reorder_from_index" ConfigName="Debug"/>
+      <Project Name="minimum_distance" ConfigName="Debug"/>
+      <Project Name="max_sum_increasing_subsequence" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -33,6 +37,8 @@
       <Project Name="pos_even_neg_odd" ConfigName="Release"/>
       <Project Name="min_missing_from_array" ConfigName="Release"/>
       <Project Name="reorder_from_index" ConfigName="Release"/>
+      <Project Name="minimum_distance" ConfigName="Release"/>
+      <Project Name="max_sum_increasing_subsequence" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
